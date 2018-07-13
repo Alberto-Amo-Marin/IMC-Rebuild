@@ -9,7 +9,7 @@ import { TdMediaService } from '@covalent/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Starter Template';
+  name = 'IMCalc';
 
   routes: Object[] = [{
       icon: 'home',

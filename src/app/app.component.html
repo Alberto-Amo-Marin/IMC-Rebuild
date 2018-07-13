@@ -1,61 +1,116 @@
 <td-layout>
-  <td-navigation-drawer flex [sidenavTitle]="name" logo="assets:covalent" name="Firstname Lastname" email="firstname.lastname@company.com">
-    <mat-nav-list>
-      <a *ngFor="let item of routes" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-    </mat-nav-list>
-    <div td-navigation-drawer-menu>
-      <mat-nav-list>
-        <a *ngFor="let item of usermenu" mat-list-item><mat-icon>{{item.icon}}</mat-icon>{{item.title}}</a>
-      </mat-nav-list>
-    </div>
-  </td-navigation-drawer>
-  <td-layout-nav logo="assets:covalent" [toolbarTitle]="name" navigationRoute="/">
-    <button mat-icon-button td-menu-button tdLayoutToggle>
-      <mat-icon>menu</mat-icon>
-    </button>
+  <td-layout-nav [toolbarTitle]="name" navigationRoute="/">
     <div td-toolbar-content layout="row" layout-align="start center" flex>
       <span flex></span>
-      <a mat-icon-button matTooltip="Docs" matTooltipPosition="before" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+      <a mat-icon-button matTooltip="About Me" matTooltipPosition="before" href="https://www.linkedin.com/in/aamo91/" target="_blank">
+        <mat-icon>accessibility_new</mat-icon>
+      </a>
     </div>
+  
     <!-- router outlet goes here -->
-    <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']">
-      <div flex-gt-sm="60">
+    <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']" layout-align="center">
+      <div flex-gt-sm="80">
         <mat-card>
-          <mat-card-title>Products Sales</mat-card-title>
-          <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
+          <mat-card-title>IMC</mat-card-title>
+          <mat-card-subtitle>¿Qué es el IMC?</mat-card-subtitle>
           <mat-divider></mat-divider>
           <mat-card-content>
-            card content
+
+            El índice de masa corporal (IMC) es una razón matemática que asocia la masa y la talla de un individuo, ideada por el estadístico
+            belga Adolphe Quetelet; por lo que también se conoce como índice de Quetelet.
+            <br>
+            <br> Hay que destacar que no se pueden aplicar los mismos valores de IMC en niños y adolescentes debido a su constante
+            aumento de estatura y desarrollo corporal, por lo que se obtiene un IMC respecto a su edad y sexo.
+            <br>
+            <br> Por ello, primero se deberá contar con la fecha de nacimiento y de medición para obtener la edad calculada y
+            así ser más precisos al categorizar a éste grupo de edad. Después se calculará el IMC con la misma fórmula que
+            para el adulto, y después de calcularse el IMC para este grupo de edad, el valor del IMC se comparará en tablas
+            de crecimiento del CDC para el IMC por edad tanto para niños y niñas respectivamente para obtener la categoría
+            del percentil.
+            <br>
+            <br> Dichos percentiles son una medida de dispersión que se utiliza con más frecuencia para evaluar el tamaño y los
+            patrones de crecimiento de cada niño en los Estados Unidos, debido a que son menos susceptibles a presentar valores
+            extremos y por lo tanto errores en los rangos de valores.
+            <br>
+            <br> El percentil indica la posición relativa del número del IMC del niño entre niños del mismo sexo y edad. Las
+            tablas de crecimiento muestran las categorías del nivel de peso que se usan con niños y adolescentes (bajo peso,
+            peso saludable, sobrepeso y obeso).
+
           </mat-card-content>
-          <mat-divider></mat-divider>
+          <!-- <mat-divider></mat-divider>
           <mat-card-actions>
             <a mat-button color="accent" class="text-upper">
               <span>View More</span>
             </a>
-          </mat-card-actions>
-        </mat-card>
-        <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
-          <mat-card-title>Customer Activity</mat-card-title>
-          <mat-card-subtitle>Recent activity from select members</mat-card-subtitle>
-          <mat-divider></mat-divider>
-          <mat-card-content>
-            card content
-          </mat-card-content>
-          <mat-divider></mat-divider>
-          <mat-card-actions>
-            <a mat-button color="accent" class="text-upper">
-              <span>View More</span>
-            </a>
-          </mat-card-actions>
+          </mat-card-actions> -->
         </mat-card>
       </div>
+    </div>
+    <br>
+    <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']" layout-align="center center">
       <div flex-gt-sm="40">
-        <mat-card>
-          <mat-card-title>Alerts</mat-card-title>
-          <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
+        <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
+          <mat-card-title>Cálculo del IMC:</mat-card-title>
           <mat-divider></mat-divider>
           <mat-card-content>
-            card content
+            <mat-toolbar class="imc-toolbar">
+
+
+              <mat-toolbar-row class="text-row">
+                <span>Escriba su ALTURA actual:</span>
+                <span class="example-spacer"></span>
+                <mat-form-field class="example-ele" style="width: 10%;">
+                  <input matInput>
+                </mat-form-field>
+                <span class="example-ele">CM.</span>
+              </mat-toolbar-row>
+
+              <mat-toolbar-row class="text-row">
+                <span>Escriba su PESO actual:</span>
+                <span class="example-spacer"></span>
+                <mat-form-field class="example-ele" style="width: 10%;">
+                  <input matInput>
+                </mat-form-field>
+                <span class="example-ele">KG.</span>
+              </mat-toolbar-row>
+
+              <mat-toolbar-row class="calc-button">
+                <button mat-raised-button color="primary">CALCULAR</button>
+              </mat-toolbar-row>
+
+            </mat-toolbar>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+      <div  flex-gt-sm="40">  
+      <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
+          <mat-card-title>Resultado del IMC:</mat-card-title>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+          
+            <mat-toolbar class="imc-toolbar">
+              <mat-toolbar-row class="text-row">
+                  <span>Índice de Masa Corporal</span>
+                  <span class="example-spacer"></span>
+                  <mat-form-field class="example-ele" style="width: 10%;">
+                    <input matInput disabled>
+                  </mat-form-field>
+            
+                </mat-toolbar-row>
+            
+                <mat-toolbar-row class="text-row">
+                  <span>Según su valor de IMC, tiene:</span>
+                  <span class="example-spacer"></span>
+                  <mat-form-field class="example-ele" style="width: 10%;">
+                    <input matInput disabled>
+                  </mat-form-field>
+            
+                </mat-toolbar-row>
+            
+            
+              </mat-toolbar>
+
           </mat-card-content>
           <mat-divider></mat-divider>
           <mat-card-actions>
@@ -64,6 +119,14 @@
             </a>
           </mat-card-actions>
         </mat-card>
+     
+      </div>
+    </div>
+
+
+    <!-- <div flex-gt-sm="40">
+
+
         <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
           <mat-card-title>Favorites</mat-card-title>
           <mat-card-subtitle>Your favorite products</mat-card-subtitle>
@@ -79,10 +142,11 @@
           </mat-card-actions>
         </mat-card>
       </div>
-    </div>
+    </div> -->
+
     <td-layout-footer>
       <div layout="row" layout-align="start center">
-        <span class="mat-caption">Copyright &copy; 2017 Teradata. All rights reserved</span>
+        <span class="mat-caption">Copyright &copy; 2018 Alberto Amo Marín. Made with &hearts; thanks to Teradata & Angular Material</span>
       </div>
     </td-layout-footer>
   </td-layout-nav>
