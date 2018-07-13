@@ -88,14 +88,14 @@ $background: map-get($theme, background);
     color: mat-color($foreground, secondary-text);
 }
 mat-card-title{
-  &:hover {
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-  }
-  &:active {
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
-  }
+//   &:hover {
+//     cursor: grab;
+//     cursor: -moz-grab;
+//     cursor: -webkit-grab;
+//   }
+//   &:active {
+//     cursor: grabbing;
+//     cursor: -moz-grabbing;
+//     cursor: -webkit-grabbing;
+//   }
 }
