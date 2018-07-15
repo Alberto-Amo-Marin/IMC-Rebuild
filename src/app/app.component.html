@@ -42,9 +42,9 @@
 
     </div>
 
-    
+
     <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']" layout-align="center center">
-      <div flex-gt-sm="40">
+      <div flex-gt-sm="20">
         <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
           <mat-card-title>Cálculo del IMC:</mat-card-title>
           <mat-divider></mat-divider>
@@ -80,12 +80,11 @@
       </div>
 
       <div layout-gt-sm="column" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']" layout-align="center center">
-        <div>
-          <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
+        <div tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
+          <mat-card>
             <mat-card-title>Resultado del IMC:</mat-card-title>
             <mat-divider></mat-divider>
             <mat-card-content>
-
               <mat-toolbar class="imc-toolbar">
                 <mat-toolbar-row class="text-row">
                   <span>Índice de Masa Corporal</span>
@@ -93,92 +92,62 @@
                   <mat-form-field class="example-ele" style="width: 10%;">
                     <input matInput disabled>
                   </mat-form-field>
-
                 </mat-toolbar-row>
-
                 <mat-toolbar-row class="text-row">
                   <span>Según su valor de IMC, tiene:</span>
                   <span class="example-spacer"></span>
                   <mat-form-field class="example-ele" style="width: 10%;">
                     <input matInput disabled>
                   </mat-form-field>
-
                 </mat-toolbar-row>
-
-
               </mat-toolbar>
-
             </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <a mat-button color="accent" class="text-upper">
-                <span>View More</span>
-              </a>
-            </mat-card-actions>
           </mat-card>
         </div>
 
-        <div>
-          <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
-            <mat-card-title>Resultado del IMC:</mat-card-title>
-            <mat-divider></mat-divider>
-            <mat-card-content>
 
-              <mat-toolbar class="imc-toolbar">
-                <mat-toolbar-row class="text-row">
-                  <span>Índice de Masa Corporal</span>
-                  <span class="example-spacer"></span>
-                  <mat-form-field class="example-ele" style="width: 10%;">
-                    <input matInput disabled>
-                  </mat-form-field>
-
-                </mat-toolbar-row>
-
-                <mat-toolbar-row class="text-row">
-                  <span>Según su valor de IMC, tiene:</span>
-                  <span class="example-spacer"></span>
-                  <mat-form-field class="example-ele" style="width: 10%;">
-                    <input matInput disabled>
-                  </mat-form-field>
-
-                </mat-toolbar-row>
-
-
-              </mat-toolbar>
-
-            </mat-card-content>
-            <mat-divider></mat-divider>
-            <mat-card-actions>
-              <a mat-button color="accent" class="text-upper">
-                <span>View More</span>
-              </a>
-            </mat-card-actions>
-          </mat-card>
-        </div>
 
       </div>
+
+      <div layout-gt-sm="column" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']" layout-align="center center" class="div-table-out">
+        <div class="div-table-in">
+          <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
+            <mat-card-title>Clasificación según la OMS:</mat-card-title>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-card-content>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>IMC</th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="clasif">
+                  <th mat-header-cell *matHeaderCellDef>Clasificación</th>
+                  <td mat-cell *matCellDef="let element"> {{element.clasif}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns">
+                  <span class="example-spacer"></span>
+                </tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                  <span class="example-spacer"></span>
+                </tr>
+              </table>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+
     </div>
-  
-
-    <!-- <div flex-gt-sm="40">
 
 
-        <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
-          <mat-card-title>Favorites</mat-card-title>
-          <mat-card-subtitle>Your favorite products</mat-card-subtitle>
-          <mat-divider></mat-divider>
-          <mat-card-content>
-            card content
-          </mat-card-content>
-          <mat-divider></mat-divider>
-          <mat-card-actions>
-            <a mat-button color="accent" class="text-upper">
-              <span>View More</span>
-            </a>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </div> -->
+
+
+
+
 
     <td-layout-footer>
       <div layout="row" layout-align="start center">

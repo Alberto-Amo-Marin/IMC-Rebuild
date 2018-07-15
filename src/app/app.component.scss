@@ -1,0 +1,39 @@
+p {
+  font-family: Lato;
+}
+
+.text-row{
+  font-size: 15px !important;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-ele {
+  padding: 0 14px;
+}
+
+.calc-button{
+  justify-content: center;
+}
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+  .div-table-out{
+    width: 30%;
+  }
+
+  .div-table-in{
+    width: 100%;
+  }
+}
+
+
