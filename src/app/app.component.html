@@ -44,19 +44,19 @@
 
 
     <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']" layout-align="center center">
-      <div flex-gt-sm="30">
+      <div flex-gt-sm="25">
         <mat-card tdMediaToggle="gt-sm" [mediaClasses]="['push-top']">
           <mat-card-title>Cálculo del IMC:</mat-card-title>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-toolbar class="imc-toolbar">
+            <mat-toolbar class="imc-toolbar" color="accent">
 
 
               <mat-toolbar-row class="text-row">
                 <span>Escriba su ALTURA actual:</span>
                 <span class="example-spacer"></span>
                 <mat-form-field class="example-ele" style="width: 10%;">
-                  <input matInput>
+                  <input matInput [(ngModel)]="altura">
                 </mat-form-field>
                 <span class="example-ele">CM.</span>
               </mat-toolbar-row>
@@ -65,13 +65,13 @@
                 <span>Escriba su PESO actual:</span>
                 <span class="example-spacer"></span>
                 <mat-form-field class="example-ele" style="width: 10%;">
-                  <input matInput>
+                  <input matInput [(ngModel)]="peso">
                 </mat-form-field>
                 <span class="example-ele">KG.</span>
               </mat-toolbar-row>
 
               <mat-toolbar-row class="calc-button">
-                <button mat-raised-button color="primary">CALCULAR</button>
+                <button mat-raised-button color="warn" (click)="calcIMC()">CALCULAR</button>
               </mat-toolbar-row>
 
             </mat-toolbar>
@@ -85,19 +85,19 @@
             <mat-card-title>Resultado del IMC:</mat-card-title>
             <mat-divider></mat-divider>
             <mat-card-content>
-              <mat-toolbar class="imc-toolbar">
+              <mat-toolbar class="imc-toolbar" color="accent">
                 <mat-toolbar-row class="text-row">
                   <span>Índice de Masa Corporal</span>
                   <span class="example-spacer"></span>
                   <mat-form-field class="example-ele" style="width: 10%;">
-                    <input matInput disabled>
+                    <input matInput disabled [(ngModel)]="masa" style="color: white">
                   </mat-form-field>
                 </mat-toolbar-row>
                 <mat-toolbar-row class="text-row">
                   <span>Según su valor de IMC, tiene:</span>
                   <span class="example-spacer"></span>
-                  <mat-form-field class="example-ele" style="width: 10%;">
-                    <input matInput disabled>
+                  <mat-form-field class="example-ele" style="width: 50%;">
+                    <input matInput disabled [(ngModel)]="valoracion" style="font-size: 15px; color: white; text-align: right">
                   </mat-form-field>
                 </mat-toolbar-row>
               </mat-toolbar>
@@ -116,7 +116,7 @@
             <mat-divider></mat-divider>
             <br>
             <mat-card-content>
-              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" color="accent">
 
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef>IMC</th>
